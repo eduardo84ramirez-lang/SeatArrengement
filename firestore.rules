@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Teachers can read and write their own classroom data and layouts
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null && (request.auth.uid == userId || request.auth.token.email.matches('.*@montessori\\.edu\\.co'));
+    }
+    
+    match /classrooms/{classroomId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Classroom Seating Planner",
+  "description": "Smart classroom seating chart planner for teachers to arrange student seats based on performance, behavioral needs, and paper map sketches, with Google authentication and PDF/PNG export.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
